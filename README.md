@@ -1,29 +1,52 @@
 <p align="center">
-  <img src="https://github.com/openpeeps/PKG/blob/main/.github/logo.png" width="90px"><br>
-  OpenPeeps repository template for developing libraries,<br>projects and other cool things. 👑 Written in Nim language
+  Paddle API Client for 👑 Nim language
 </p>
 
 <p align="center">
-  <code>nimble install {PKG}</code>
+  <code>nimble install paddle</code>
 </p>
 
 <p align="center">
-  <a href="https://github.com/">API reference</a><br>
-  <img src="https://github.com/openpeeps/pistachio/workflows/test/badge.svg" alt="Github Actions">  <img src="https://github.com/openpeeps/pistachio/workflows/docs/badge.svg" alt="Github Actions">
+  <a href="https://openpeeps.github.io/paddle-nim">API reference</a><br>
+  <img src="https://github.com/openpeeps/paddle-nim/workflows/test/badge.svg" alt="Github Actions">  <img src="https://github.com/openpeeps/paddle-nim/workflows/docs/badge.svg" alt="Github Actions">
 </p>
 
 ## 😍 Key Features
-- [x] Open Source | `MIT` License
-- [x] Written in Nim language
+- Asynchronous API calls using Nim's `async`/`await`
+- Direct-to-object mapping of Paddle API responses to Nim types
+- 🧑‍💻 Idiomatic Nim API client for the [Paddle API](https://developer.paddle.com/reference/overview)
 
 ## Examples
-...
+```nim
+import paddle
+
+let client = initPaddleClient("pdl_sdbx_apikey_")
+
+# create your Paddle product
+let product = await client.postProduct("My Product", some("A great product"))
+
+# add a price to your product
+let price = await client.postPrice(
+      productId = product.id,
+      name = "Standard Plan",
+      description = "The standard plan for my product",
+      billingCycle = paddle.initBillingCycle(PaddleBillingInterval.month, 1),
+      unitPrice = initPrice("1000", EUR)
+)
+```
+
+### TODO
+- [ ] Use `pkg/money` for price fields instead of strings
+- [ ] Add more API endpoints (subscriptions, coupons, etc.)
+- [ ] Add support for webhooks and events
+- [ ] Add more examples and documentation
+- [ ] Add unit tests
 
 ### ❤ Contributions & Support
-- 🐛 Found a bug? [Create a new Issue](/issues)
-- 👋 Wanna help? [Fork it!](/fork)
+- 🐛 Found a bug? [Create a new Issue](https://github.com/openpeeps/paddle-nim/issues)
+- 👋 Wanna help? [Fork it!](https://github.com/openpeeps/paddle-nim/fork)
 - 😎 [Get €20 in cloud credits from Hetzner](https://hetzner.cloud/?ref=Hm0mYGM9NxZ4)
 
 ### 🎩 License
-{PKG} | MIT license. [Made by Humans from OpenPeeps](https://github.com/openpeeps).<br>
+MIT license. [Made by Humans from OpenPeeps](https://github.com/openpeeps).<br>
 Copyright OpenPeeps & Contributors &mdash; All rights reserved.
