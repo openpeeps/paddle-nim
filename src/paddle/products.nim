@@ -11,9 +11,11 @@ type
     ## Represents a product entity with included entities
     name*: string
       ## The name of the product
-    tax_category*: PaddleTaxCategory
-    description*: Option[string]
+    description*: string
       ## Short description for this product
+    image_url*: string
+      ## URL of the product image. Must be an HTTPS URL that is publicly accessible.
+    tax_category*: PaddleTaxCategory
 
 proc getProducts*(client: PaddleClient): Future[PaddleApiResponse[seq[PaddleProduct]]] {.async.} = 
   ## Retrieves a list of products.
@@ -35,7 +37,7 @@ proc getProduct*(client: PaddleClient, id: PaddleEntryId): Future[PaddleApiRespo
   else:
     raise newException(PaddleClientError, body)
 
-proc createProduct*(client: PaddleClient, name: string,
+proc postProduct*(client: PaddleClient, name: string,
           taxCategory = PaddleTaxCategory.standard,
           description: Option[string] = none(string),
           imageUrl: Option[string] = none(string),

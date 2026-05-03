@@ -14,6 +14,9 @@ export asyncdispatch, httpclient,
 
 type
   PaddleTaxCategory* = enum
+    standard = "standard"
+      ## Return entities with the tax category of standard. Software products that
+      ## are pre-written and can be downloaded and installed onto a local device.
     digitalGoods = "digital-goods"
       ## Return entities with the tax category of digital-goods. Non-customizable digital files or media
       ## (not software) acquired with an up front payment that can be accessed without any
@@ -34,9 +37,6 @@ type
     softwareProgrammingServices = "software-programming-services"
       ## Return entities with the tax category of software-programming-services.
       ## Services that can be used to customize and white label software products.
-    standard = "standard"
-      ## Return entities with the tax category of standard. Software products that
-      ## are pre-written and can be downloaded and installed onto a local device.
     trainingServices = "training-services"
       ## Return entities with the tax category of training-services.
       ## Training and education services related to software products.
@@ -93,6 +93,10 @@ type
   PaddleApiResponse*[T] = object of RootObj
     data*: T
     meta*: PaddleApiResponseMeta
+
+  ApiResponseData*[T] = object
+    data*: T
+    meta*: JsonNode
 
   PaddleClient* = object
     ## Represents a client for making API requests to the Paddle service
@@ -180,8 +184,13 @@ proc httpPost*[T](client: PaddleClient, endpoint: string, body: T): Future[Async
   ## Makes a `POST` request to the specified endpoint of the Paddle API
   ## using the provided `PaddleClient` and JSON body
   let url = client.baseUri & endpoint
-  echo json.toJson(body)
   await client.client.post(url, json.toJson(body))
+
+proc httpPost*(client: PaddleClient, endpoint: string): Future[AsyncResponse] {.async.} =
+  ## Makes a `POST` request to the specified endpoint of the Paddle API
+  ## using the provided `PaddleClient` and JSON body
+  let url = client.baseUri & endpoint
+  await client.client.post(url)
 
 proc httpPatch*[T](client: PaddleClient, endpoint: string, body: T): Future[AsyncResponse] {.async.} =
   ## Makes a `PATCH` request to the specified endpoint of the Paddle API

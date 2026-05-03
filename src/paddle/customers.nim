@@ -14,6 +14,10 @@ type
       ## The customer's full name
     locate*: string
       ## Valid IETF BCP 47 short form locale tag. If omitted, defaults to `en`
+  
+  PaddleCustomerToken* = object of PaddleBaseObject
+    customer_auth_token: string
+    expires_at: DateTime
 
 proc getCustomers*(client: PaddleClient): Future[PaddleApiResponse[seq[PaddleCustomer]]] {.async.} = 
   ## Retrieves a list of customers.
@@ -75,5 +79,15 @@ proc patchCustomer*(client: PaddleClient, id: PaddleEntryId,
   case res.code:
   of Http200:
     result = fromJson(resBody, PaddleApiResponse[PaddleCustomer])
+  else:
+    raise newException(PaddleClientError, resBody)
+
+proc genAuthToken*(client: PaddleClient, customerId: PaddleEntryId): Future[ApiResponseData[PaddleCustomerToken]] {.async.} =
+  ## Generates a customer authentication token.
+  let res: AsyncResponse = await client.httpPost("customers/" & customerId & "/auth-token")
+  let resBody = await res.body
+  case res.code:
+  of Http200:
+    result = fromJson(resBody, ApiResponseData[PaddleCustomerToken])
   else:
     raise newException(PaddleClientError, resBody)
