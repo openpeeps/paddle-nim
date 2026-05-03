@@ -183,6 +183,12 @@ proc httpPost*[T](client: PaddleClient, endpoint: string, body: T): Future[Async
   echo json.toJson(body)
   await client.client.post(url, json.toJson(body))
 
+proc httpPatch*[T](client: PaddleClient, endpoint: string, body: T): Future[AsyncResponse] {.async.} =
+  ## Makes a `PATCH` request to the specified endpoint of the Paddle API
+  ## using the provided `PaddleClient` and JSON body
+  let url = client.baseUri & endpoint
+  await client.client.patch(url, json.toJson(body))
+
 proc len*[T](response: PaddleApiResponse[seq[T]]): int =
   ## Returns the number of products in the response
   response.data.len
