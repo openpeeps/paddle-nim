@@ -14,7 +14,7 @@
 ## 😍 Key Features
 - Asynchronous API calls using Nim's `async`/`await`
 - Direct-to-object mapping of Paddle API responses to Nim types
-- 🧑‍💻 Idiomatic Nim API client for the [Paddle API](https://developer.paddle.com/reference/overview)
+- Idiomatic Nim API client for the [Paddle API](https://developer.paddle.com/)
 
 ## Examples
 ```nim
