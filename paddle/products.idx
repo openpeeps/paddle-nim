@@ -1,0 +1,5 @@
+nimTitle	products	paddle/products.html	module paddle/products		0
+nim	PaddleProduct	paddle/products.html#PaddleProduct	object PaddleProduct		10
+nim	getProducts	paddle/products.html#getProducts,PaddleClient	proc getProducts(client: PaddleClient): Future[PaddleApiResponse[seq[PaddleProduct]]]		20
+nim	getProduct	paddle/products.html#getProduct,PaddleClient,PaddleEntryID	proc getProduct(client: PaddleClient; id: PaddleEntryID): Future[\n    PaddleApiResponse[PaddleProduct]]		30
+nim	postProduct	paddle/products.html#postProduct,PaddleClient,string,Option[string],Option[string],JsonNode	proc postProduct(client: PaddleClient; name: string;\n            taxCategory = PaddleTaxCategory.standard;\n            description: Option[string] = none(string);\n            imageUrl: Option[string] = none(string); customData: JsonNode = nil): Future[\n    PaddleApiResponse[PaddleProduct]]		45

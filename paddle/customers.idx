@@ -1,0 +1,8 @@
+nimTitle	customers	paddle/customers.html	module paddle/customers		0
+nim	PaddleCustomer	paddle/customers.html#PaddleCustomer	object PaddleCustomer		10
+nim	PaddleCustomerToken	paddle/customers.html#PaddleCustomerToken	object PaddleCustomerToken		18
+nim	getCustomers	paddle/customers.html#getCustomers,PaddleClient	proc getCustomers(client: PaddleClient): Future[\n    PaddleApiResponse[seq[PaddleCustomer]]]		22
+nim	getCustomer	paddle/customers.html#getCustomer,PaddleClient,PaddleEntryID	proc getCustomer(client: PaddleClient; id: PaddleEntryID): Future[\n    PaddleApiResponse[PaddleCustomer]]		32
+nim	postCustomer	paddle/customers.html#postCustomer,PaddleClient,string,string,Option[string]	proc postCustomer(client: PaddleClient; email: string; name: string;\n             locale: Option[string] = none(string)): Future[\n    PaddleApiResponse[PaddleCustomer]]		44
+nim	patchCustomer	paddle/customers.html#patchCustomer,PaddleClient,PaddleEntryID,Option[string],Option[string],Option[string]	proc patchCustomer(client: PaddleClient; id: PaddleEntryID;\n              email: Option[string] = none(string);\n              name: Option[string] = none(string);\n              locale: Option[string] = none(string)): Future[\n    PaddleApiResponse[PaddleCustomer]]		66
+nim	genAuthToken	paddle/customers.html#genAuthToken,PaddleClient,PaddleEntryID	proc genAuthToken(client: PaddleClient; customerId: PaddleEntryID): Future[\n    ApiResponseData[PaddleCustomerToken]]		85

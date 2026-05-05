@@ -1,0 +1,55 @@
+nimTitle	prices	paddle/prices.html	module paddle/prices		0
+nim	day	paddle/prices.html#day	PaddleBillingInterval.day		11
+nim	week	paddle/prices.html#week	PaddleBillingInterval.week		11
+nim	month	paddle/prices.html#month	PaddleBillingInterval.month		11
+nim	year	paddle/prices.html#year	PaddleBillingInterval.year		11
+nim	PaddleBillingInterval	paddle/prices.html#PaddleBillingInterval	enum PaddleBillingInterval		11
+nim	PaddleBillingCycle	paddle/prices.html#PaddleBillingCycle	object PaddleBillingCycle		18
+nim	taxModeAccountSetting	paddle/prices.html#taxModeAccountSetting	PriceTaxMode.taxModeAccountSetting		26
+nim	taxModeExternal	paddle/prices.html#taxModeExternal	PriceTaxMode.taxModeExternal		26
+nim	taxModeInternal	paddle/prices.html#taxModeInternal	PriceTaxMode.taxModeInternal		26
+nim	taxModeLocation	paddle/prices.html#taxModeLocation	PriceTaxMode.taxModeLocation		26
+nim	PriceTaxMode	paddle/prices.html#PriceTaxMode	enum PriceTaxMode		26
+nim	USD	paddle/prices.html#USD	CurrencyCode.USD		37
+nim	EUR	paddle/prices.html#EUR	CurrencyCode.EUR		37
+nim	GBP	paddle/prices.html#GBP	CurrencyCode.GBP		37
+nim	JPY	paddle/prices.html#JPY	CurrencyCode.JPY		37
+nim	AUD	paddle/prices.html#AUD	CurrencyCode.AUD		37
+nim	CAD	paddle/prices.html#CAD	CurrencyCode.CAD		37
+nim	CHF	paddle/prices.html#CHF	CurrencyCode.CHF		37
+nim	HKD	paddle/prices.html#HKD	CurrencyCode.HKD		37
+nim	SGD	paddle/prices.html#SGD	CurrencyCode.SGD		37
+nim	SEK	paddle/prices.html#SEK	CurrencyCode.SEK		37
+nim	ARS	paddle/prices.html#ARS	CurrencyCode.ARS		37
+nim	BRL	paddle/prices.html#BRL	CurrencyCode.BRL		37
+nim	CNY	paddle/prices.html#CNY	CurrencyCode.CNY		37
+nim	COP	paddle/prices.html#COP	CurrencyCode.COP		37
+nim	CZK	paddle/prices.html#CZK	CurrencyCode.CZK		37
+nim	DKK	paddle/prices.html#DKK	CurrencyCode.DKK		37
+nim	HUF	paddle/prices.html#HUF	CurrencyCode.HUF		37
+nim	ILS	paddle/prices.html#ILS	CurrencyCode.ILS		37
+nim	INR	paddle/prices.html#INR	CurrencyCode.INR		37
+nim	KRW	paddle/prices.html#KRW	CurrencyCode.KRW		37
+nim	MXN	paddle/prices.html#MXN	CurrencyCode.MXN		37
+nim	NOK	paddle/prices.html#NOK	CurrencyCode.NOK		37
+nim	NZD	paddle/prices.html#NZD	CurrencyCode.NZD		37
+nim	PLN	paddle/prices.html#PLN	CurrencyCode.PLN		37
+nim	RUB	paddle/prices.html#RUB	CurrencyCode.RUB		37
+nim	THB	paddle/prices.html#THB	CurrencyCode.THB		37
+nim	TRY	paddle/prices.html#TRY	CurrencyCode.TRY		37
+nim	TWD	paddle/prices.html#TWD	CurrencyCode.TWD		37
+nim	UAH	paddle/prices.html#UAH	CurrencyCode.UAH		37
+nim	VND	paddle/prices.html#VND	CurrencyCode.VND		37
+nim	ZAR	paddle/prices.html#ZAR	CurrencyCode.ZAR		37
+nim	CurrencyCode	paddle/prices.html#CurrencyCode	enum CurrencyCode		37
+nim	PriceUnit	paddle/prices.html#PriceUnit	object PriceUnit		41
+nim	PriceUnitOverride	paddle/prices.html#PriceUnitOverride	object PriceUnitOverride		48
+nim	PaddlePrice	paddle/prices.html#PaddlePrice	object PaddlePrice		54
+nim	getPrices	paddle/prices.html#getPrices,PaddleClient	proc getPrices(client: PaddleClient): Future[PaddleApiResponse[seq[PaddlePrice]]]		87
+nim	postPrice	paddle/prices.html#postPrice,PaddleClient,PaddleEntryID,string,string,PaddleBillingCycle,PriceUnit,PriceTaxMode,Option[PaddleBillingCycle]	proc postPrice(client: PaddleClient; productId: PaddleEntryID; name: string;\n          description: string; billingCycle: PaddleBillingCycle;\n          unitPrice: PriceUnit;\n          taxMode: PriceTaxMode = PriceTaxMode.taxModeAccountSetting;\n          trialPeriod: Option[PaddleBillingCycle] = none(PaddleBillingCycle)): Future[\n    PaddleApiResponse[PaddlePrice]]		104
+nim	postPrice	paddle/prices.html#postPrice,PaddleClient,PaddleEntryID,string,PriceUnit	proc postPrice(client: PaddleClient; productId: PaddleEntryID; name: string;\n          price: PriceUnit): Future[PaddleApiResponse[PaddlePrice]]		128
+nim	initBillingCycle	paddle/prices.html#initBillingCycle,PaddleBillingInterval,int	proc initBillingCycle(interval: PaddleBillingInterval; frequency: int): PaddleBillingCycle		143
+nim	initPrice	paddle/prices.html#initPrice,PriceUnit,Option[PaddleBillingCycle],Option[PaddleBillingCycle],PriceTaxMode	proc initPrice(unitPrice: PriceUnit;\n          billingCycle: Option[PaddleBillingCycle] = none(PaddleBillingCycle);\n          trialPeriod: Option[PaddleBillingCycle] = none(PaddleBillingCycle);\n          taxMode: PriceTaxMode = PriceTaxMode.taxModeAccountSetting): PaddlePrice		147
+nim	initPrice	paddle/prices.html#initPrice,string,CurrencyCode	proc initPrice(amount: string; currency: CurrencyCode): PriceUnit		161
+nimgrp	postprice	paddle/prices.html#postPrice-procs-all	proc		97
+nimgrp	initprice	paddle/prices.html#initPrice-procs-all	proc		147

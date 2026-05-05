@@ -1,0 +1,39 @@
+nimTitle	api	paddle/api.html	module paddle/api		0
+nim	standard	paddle/api.html#standard	PaddleTaxCategory.standard		16
+nim	digitalGoods	paddle/api.html#digitalGoods	PaddleTaxCategory.digitalGoods		16
+nim	ebooks	paddle/api.html#ebooks	PaddleTaxCategory.ebooks		16
+nim	implementationServices	paddle/api.html#implementationServices	PaddleTaxCategory.implementationServices		16
+nim	professionalServices	paddle/api.html#professionalServices	PaddleTaxCategory.professionalServices		16
+nim	saas	paddle/api.html#saas	PaddleTaxCategory.saas		16
+nim	softwareProgrammingServices	paddle/api.html#softwareProgrammingServices	PaddleTaxCategory.softwareProgrammingServices		16
+nim	trainingServices	paddle/api.html#trainingServices	PaddleTaxCategory.trainingServices		16
+nim	websiteHosting	paddle/api.html#websiteHosting	PaddleTaxCategory.websiteHosting		16
+nim	PaddleTaxCategory	paddle/api.html#PaddleTaxCategory	enum PaddleTaxCategory		16
+nim	standard	paddle/api.html#standard_2	PaddleItemType.standard		47
+nim	custom	paddle/api.html#custom	PaddleItemType.custom		47
+nim	PaddleItemType	paddle/api.html#PaddleItemType	enum PaddleItemType		47
+nim	active	paddle/api.html#active	PaddleItemStatus.active		51
+nim	archived	paddle/api.html#archived	PaddleItemStatus.archived		51
+nim	PaddleItemStatus	paddle/api.html#PaddleItemStatus	enum PaddleItemStatus		51
+nim	PaddleEntryID	paddle/api.html#PaddleEntryID	type PaddleEntryID		55
+nim	PaddleBaseObject	paddle/api.html#PaddleBaseObject	object PaddleBaseObject		59
+nim	PaddleApiResponseMetaPagination	paddle/api.html#PaddleApiResponseMetaPagination	object PaddleApiResponseMetaPagination		74
+nim	PaddleApiResponseMeta	paddle/api.html#PaddleApiResponseMeta	object PaddleApiResponseMeta		89
+nim	PaddleApiResponse	paddle/api.html#PaddleApiResponse	object PaddleApiResponse		93
+nim	ApiResponseData	paddle/api.html#ApiResponseData	object ApiResponseData		97
+nim	PaddleClient	paddle/api.html#PaddleClient	object PaddleClient		101
+nim	PaddleClientError	paddle/api.html#PaddleClientError	object PaddleClientError		111
+nim	QueryTable	paddle/api.html#QueryTable	type QueryTable		113
+nim	initPaddleClient	paddle/api.html#initPaddleClient,string	proc initPaddleClient(apiKey: string): PaddleClient		117
+nim	parseHook	paddle/api.html#parseHook,,DateTime	proc parseHook(parser: var json.JsonParser; v: var DateTime)		132
+nim	dumpHook	paddle/api.html#dumpHook,string,DateTime	proc dumpHook(s: var string; v: DateTime)		159
+nim	`$`	paddle/api.html#$,QueryTable	proc `$`(query: QueryTable): string		164
+nim	httpGet	paddle/api.html#httpGet,PaddleClient,string,QueryTable	proc httpGet(client: PaddleClient; endpoint: string; query: QueryTable): Future[\n    AsyncResponse]		171
+nim	httpGet	paddle/api.html#httpGet,PaddleClient,string	proc httpGet(client: PaddleClient; endpoint: string): Future[AsyncResponse]		177
+nim	httpPost	paddle/api.html#httpPost,PaddleClient,string,T	proc httpPost[T](client: PaddleClient; endpoint: string; body: T): Future[\n    AsyncResponse]		183
+nim	httpPost	paddle/api.html#httpPost,PaddleClient,string	proc httpPost(client: PaddleClient; endpoint: string): Future[AsyncResponse]		189
+nim	httpPatch	paddle/api.html#httpPatch,PaddleClient,string,T	proc httpPatch[T](client: PaddleClient; endpoint: string; body: T): Future[\n    AsyncResponse]		195
+nim	len	paddle/api.html#len,PaddleApiResponse[seq[T]]	proc len[T](response: PaddleApiResponse[seq[T]]): int		201
+nim	isEmpty	paddle/api.html#isEmpty,PaddleApiResponse[seq[T]]	proc isEmpty[T](response: PaddleApiResponse[seq[T]]): bool		205
+nimgrp	httppost	paddle/api.html#httpPost-procs-all	proc		183
+nimgrp	httpget	paddle/api.html#httpGet-procs-all	proc		170

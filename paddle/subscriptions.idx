@@ -1,0 +1,39 @@
+nimTitle	subscriptions	paddle/subscriptions.html	module paddle/subscriptions		0
+nim	active	paddle/subscriptions.html#active	PaddleSubscriptionStatus.active		11
+nim	paused	paddle/subscriptions.html#paused	PaddleSubscriptionStatus.paused		11
+nim	canceled	paddle/subscriptions.html#canceled	PaddleSubscriptionStatus.canceled		11
+nim	past_due	paddle/subscriptions.html#past_due	PaddleSubscriptionStatus.past_due		11
+nim	trialing	paddle/subscriptions.html#trialing	PaddleSubscriptionStatus.trialing		11
+nim	PaddleSubscriptionStatus	paddle/subscriptions.html#PaddleSubscriptionStatus	enum PaddleSubscriptionStatus		11
+nim	recurring	paddle/subscriptions.html#recurring	PaddleDiscountType.recurring		18
+nim	oneOff	paddle/subscriptions.html#oneOff	PaddleDiscountType.oneOff		18
+nim	PaddleDiscountType	paddle/subscriptions.html#PaddleDiscountType	enum PaddleDiscountType		18
+nim	PaddlePeriod	paddle/subscriptions.html#PaddlePeriod	object PaddlePeriod		25
+nim	PaddleDiscount	paddle/subscriptions.html#PaddleDiscount	object PaddleDiscount		29
+nim	automatic	paddle/subscriptions.html#automatic	PaddleCollectionMethod.automatic		36
+nim	manual	paddle/subscriptions.html#manual	PaddleCollectionMethod.manual		36
+nim	PaddleCollectionMethod	paddle/subscriptions.html#PaddleCollectionMethod	enum PaddleCollectionMethod		36
+nim	PaddlePaymentTerms	paddle/subscriptions.html#PaddlePaymentTerms	object PaddlePaymentTerms		44
+nim	PaddleBillingDetails	paddle/subscriptions.html#PaddleBillingDetails	object PaddleBillingDetails		50
+nim	cancel	paddle/subscriptions.html#cancel	PaddleScheduledChangeAction.cancel		62
+nim	pause	paddle/subscriptions.html#pause	PaddleScheduledChangeAction.pause		62
+nim	resume	paddle/subscriptions.html#resume	PaddleScheduledChangeAction.resume		62
+nim	PaddleScheduledChangeAction	paddle/subscriptions.html#PaddleScheduledChangeAction	enum PaddleScheduledChangeAction		62
+nim	PaddleScheduledChange	paddle/subscriptions.html#PaddleScheduledChange	object PaddleScheduledChange		72
+nim	PaddleManagementUrls	paddle/subscriptions.html#PaddleManagementUrls	object PaddleManagementUrls		81
+nim	active	paddle/subscriptions.html#active_2	PaddleSubscriptionItemStatus.active		89
+nim	inactive	paddle/subscriptions.html#inactive	PaddleSubscriptionItemStatus.inactive		89
+nim	trialing	paddle/subscriptions.html#trialing_2	PaddleSubscriptionItemStatus.trialing		89
+nim	PaddleSubscriptionItemStatus	paddle/subscriptions.html#PaddleSubscriptionItemStatus	enum PaddleSubscriptionItemStatus		89
+nim	PaddleSubscriptionItem	paddle/subscriptions.html#PaddleSubscriptionItem	object PaddleSubscriptionItem		94
+nim	trialEnding	paddle/subscriptions.html#trialEnding	PaddleConsentRequirementType.trialEnding		115
+nim	introductoryDiscountEnding	paddle/subscriptions.html#introductoryDiscountEnding	PaddleConsentRequirementType.introductoryDiscountEnding		115
+nim	PaddleConsentRequirementType	paddle/subscriptions.html#PaddleConsentRequirementType	enum PaddleConsentRequirementType		115
+nim	pending	paddle/subscriptions.html#pending	PaddleConsentRequirementStatus.pending		119
+nim	granted	paddle/subscriptions.html#granted	PaddleConsentRequirementStatus.granted		119
+nim	voided	paddle/subscriptions.html#voided	PaddleConsentRequirementStatus.voided		119
+nim	PaddleConsentRequirementStatus	paddle/subscriptions.html#PaddleConsentRequirementStatus	enum PaddleConsentRequirementStatus		119
+nim	PaddleConsentRequirement	paddle/subscriptions.html#PaddleConsentRequirement	object PaddleConsentRequirement		124
+nim	PaddleSubscription	paddle/subscriptions.html#PaddleSubscription	object PaddleSubscription		134
+nim	getSubscriptions	paddle/subscriptions.html#getSubscriptions,PaddleClient	proc getSubscriptions(client: PaddleClient): Future[\n    PaddleApiResponse[seq[PaddleSubscription]]]		190
+nim	getSubscription	paddle/subscriptions.html#getSubscription,PaddleClient,PaddleEntryID	proc getSubscription(client: PaddleClient; id: PaddleEntryID): Future[\n    PaddleApiResponse[PaddleSubscription]]		200
