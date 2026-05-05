@@ -38,6 +38,7 @@ let price = await client.postPrice(
 ### TODO
 - [ ] Use `pkg/money` for price fields instead of strings
 - [ ] Add more API endpoints (subscriptions, coupons, etc.)
+- [ ] Use `pkg/openparser` dump hooks, skip fields, etc. to reduce use of `JsonNode` nodes (once implemented lol)
 - [ ] Add support for webhooks and events
 - [ ] Add more examples and documentation
 - [ ] Add unit tests
